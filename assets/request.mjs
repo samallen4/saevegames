@@ -13,7 +13,13 @@ export async function redeemDeletionCode(endpoint, publishableKey, code, send = 
       referrerPolicy: "no-referrer",
       signal: AbortSignal.timeout(15000),
     });
-    if (response.status === 404) return "not_found";
+    if (response.status === 404) {
+      // The Edge handler replies with an empty object for an unusable code.
+      // A platform 404 can mean the deletion function has not been deployed.
+      const body = await response.json();
+      return body && typeof body === "object" && !Array.isArray(body) && Object.keys(body).length === 0
+        ? "not_found" : "unavailable";
+    }
     if (response.status === 429) return "rate_limited";
     if (response.status === 200 && (await response.json()).deleted === true) return "deleted";
   } catch {
