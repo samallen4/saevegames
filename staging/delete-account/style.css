@@ -1,0 +1,17 @@
+:root { color-scheme: dark; font: 100%/1.55 system-ui, sans-serif; background: #0b1424; color: #e8effc; }
+body { margin: 0; }
+main { max-width: 36rem; margin: 0 auto; padding: clamp(1.25rem, 7vw, 4rem) 1.25rem; }
+.studio { color: #9cdef7; font-weight: 700; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: .5rem 0 1.25rem; }
+h2 { font-size: 1.2rem; margin: 0; }
+form { background: #16243b; border: 1px solid #405575; border-radius: .75rem; margin-top: 1.75rem; padding: 1.25rem; }
+label { font-weight: 600; }
+input[type=password] { box-sizing: border-box; display: block; width: 100%; margin-top: .5rem; padding: .75rem; font: inherit; border: 1px solid #8c9fbc; border-radius: .35rem; background: #0b1424; color: inherit; }
+.hint { color: #c2d2ec; font-size: .9rem; }
+.confirm { display: flex; align-items: baseline; gap: .6rem; margin: 1.25rem 0; }
+button { background: #ffda98; color: #221b10; padding: .65rem .95rem; border: 0; border-radius: .35rem; font: inherit; font-weight: 700; }
+button:disabled { opacity: .55; }
+a { color: #9cdef7; }
+:focus-visible { outline: 3px solid #9cdef7; outline-offset: .2rem; }
+section { border-top: 1px solid #405575; margin-top: 1.5rem; padding-top: 1.25rem; }
+.status { min-height: 1.55em; }
